@@ -1,0 +1,41 @@
+#include <iostream>
+
+int main() {
+    int num1, num2;
+
+    // Getting input from the user
+    std::cout << "Enter the first number: ";
+    std::cin >> num1;
+    std::cout << "Enter the second number: ";
+    std::cin >> num2;
+
+    // Arithmetic operations
+    int sum = num1 + num2;
+    int difference = num1 - num2;
+    int product = num1 * num2;
+    int quotient = num1 / num2;  // Integer division
+    int remainder = num1 % num2;
+
+    // Displaying results
+    std::cout << "Sum of " << num1 << " and " << num2 << " is: " << sum << std::endl;
+    std::cout << "Difference of " << num1 << " and " << num2 << " is: " << difference << std::endl;
+    std::cout << "Product of " << num1 << " and " << num2 << " is: " << product << std::endl;
+    std::cout << "Quotient of " << num1 << " divided by " << num2 << " is: " << quotient << std::endl;
+    std::cout << "Remainder of " << num1 << " divided by " << num2 << " is: " << remainder << std::endl;
+
+    // Assignment operators
+    int result = 10;
+    std::cout << "Initial value of result: " << result << std::endl;
+    result += 5;  // equivalent to result = result + 5
+    std::cout << "After result += 5, result is: " << result << std::endl;
+    result -= 3;  // equivalent to result = result - 3
+    std::cout << "After result -= 3, result is: " << result << std::endl;
+    result *= 2;  // equivalent to result = result * 2
+    std::cout << "After result *= 2, result is: " << result << std::endl;
+    result /= 4;  // equivalent to result = result / 4
+    std::cout << "After result /= 4, result is: " << result << std::endl;
+    result %= 3;  // equivalent to result = result % 3
+    std::cout << "After result %= 3, result is: " << result << std::endl;
+
+    return 0;
+}
