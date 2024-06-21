@@ -1,0 +1,16 @@
+#include <iostream>
+
+int main() {
+    // Print numbers 0 to 9
+    std::cout << "Numbers:" << std::endl;
+    for (int num = 0; num < 10; num++) {
+        std::cout << num << " ";
+    }
+    std::cout << std::endl << std::endl;
+
+    // Print special characters
+    std::cout << "Special Characters:" << std::endl;
+    std::cout << "! \" # $ % & ' ( ) * + , - . / : ; < = > ? @ [ \\ ] ^ _ ` { | } ~" << std::endl;
+
+    return 0;
+}
