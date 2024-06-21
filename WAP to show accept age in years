@@ -1,0 +1,17 @@
+#include <iostream>
+
+int main() {
+    int ageYears;
+    std::cout << "Enter your age in years: ";
+    std::cin >> ageYears;
+
+    // Calculate age in months and days
+    int ageMonths = ageYears * 12;
+    int ageDays = ageYears * 365;  // Assuming 365 days in a year
+
+    // Display the age in months and days
+    std::cout << "Your age in months is: " << ageMonths << std::endl;
+    std::cout << "Your age in days is: " << ageDays << std::endl;
+
+    return 0;
+}
