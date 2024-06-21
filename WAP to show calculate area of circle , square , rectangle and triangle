@@ -1,0 +1,56 @@
+#include <iostream>
+#include <cmath> // For mathematical functions like pow() and M_PI
+
+int main() {
+    int choice;
+    std::cout << "Choose a shape to calculate its area:" << std::endl;
+    std::cout << "1. Circle" << std::endl;
+    std::cout << "2. Square" << std::endl;
+    std::cout << "3. Rectangle" << std::endl;
+    std::cout << "4. Triangle" << std::endl;
+    std::cout << "Enter your choice (1-4): ";
+    std::cin >> choice;
+
+    switch(choice) {
+        case 1: {
+            // Calculate area of a circle
+            double radius;
+            std::cout << "Enter the radius of the circle: ";
+            std::cin >> radius;
+            double area_circle = M_PI * pow(radius, 2);
+            std::cout << "Area of the circle is: " << area_circle << std::endl;
+            break;
+        }
+        case 2: {
+            // Calculate area of a square
+            double side;
+            std::cout << "Enter the side length of the square: ";
+            std::cin >> side;
+            double area_square = pow(side, 2);
+            std::cout << "Area of the square is: " << area_square << std::endl;
+            break;
+        }
+        case 3: {
+            // Calculate area of a rectangle
+            double length, width;
+            std::cout << "Enter the length and width of the rectangle: ";
+            std::cin >> length >> width;
+            double area_rectangle = length * width;
+            std::cout << "Area of the rectangle is: " << area_rectangle << std::endl;
+            break;
+        }
+        case 4: {
+            // Calculate area of a triangle
+            double base, height;
+            std::cout << "Enter the base and height of the triangle: ";
+            std::cin >> base >> height;
+            double area_triangle = 0.5 * base * height;
+            std::cout << "Area of the triangle is: " << area_triangle << std::endl;
+            break;
+        }
+        default:
+            std::cout << "Invalid choice. Please enter a number between 1 to 4." << std::endl;
+    }
+
+    return 0;
+}
