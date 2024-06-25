@@ -1,0 +1,49 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Structure definition for Book
+struct Book {
+    string title;
+    string author;
+    string publication;
+    double price;
+};
+
+int main() {
+    int n;
+
+    // Input number of books
+    cout << "Enter the number of books: ";
+    cin >> n;
+
+    // Array of structures to store books
+    Book books[n];
+
+    // Input details for each book
+    cin.ignore(); // to clear input buffer before using getline
+    for (int i = 0; i < n; ++i) {
+        cout << "\nEnter details for Book " << i + 1 << ":" << endl;
+        cout << "Title: ";
+        getline(cin, books[i].title);
+        cout << "Author: ";
+        getline(cin, books[i].author);
+        cout << "Publication: ";
+        getline(cin, books[i].publication);
+        cout << "Price: ";
+        cin >> books[i].price;
+        cin.ignore(); // to clear input buffer before using getline
+    }
+
+    // Displaying all book records
+    cout << "\nBook Records:\n";
+    for (int i = 0; i < n; ++i) {
+        cout << "Book " << i + 1 << ":\n";
+        cout << "Title: " << books[i].title << endl;
+        cout << "Author: " << books[i].author << endl;
+        cout << "Publication: " << books[i].publication << endl;
+        cout << "Price: $" << books[i].price << endl << endl;
+    }
+
+    return 0;
+}
