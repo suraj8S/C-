@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Define Employee class
+class Employee {
+private:
+    string department;
+    string name;
+    double salary;
+
+public:
+    // Constructor to initialize employee attributes
+    Employee(string dept, string empName, double empSalary) {
+        department = dept;
+        name = empName;
+        salary = empSalary;
+    }
+
+    // Function to display employee details
+    void displayDetails() {
+        cout << "Name: " << name << endl;
+        cout << "Department: " << department << endl;
+        cout << "Salary: $" << salary << endl;
+    }
+};
+
+int main() {
+    // Create an Employee object
+    Employee emp1("Engineering", "John Doe", 50000.0);
+
+    // Display details of the employee
+    emp1.displayDetails();
+
+    return 0;
+}
