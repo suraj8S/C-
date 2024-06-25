@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+// Function to calculate power of a number
+double calculatePower(double base, int power) {
+    double result = 1.0;
+    for (int i = 1; i <= power; ++i) {
+        result *= base;
+    }
+    return result;
+}
+
+int main() {
+    double base;
+    int power;
+
+    // Input base and power from user
+    cout << "Enter the base: ";
+    cin >> base;
+    cout << "Enter the power: ";
+    cin >> power;
+
+    // Validate power input
+    if (power < 0) {
+        cout << "Power should be a non-negative integer." << endl;
+        return 1;
+    }
+
+    // Calculate power using the function
+    double result = calculatePower(base, power);
+
+    // Display the result
+    cout << base << " raised to the power of " << power << " is: " << result << endl;
+
+    return 0;
+}
