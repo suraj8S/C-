@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+// Function to calculate factorial of a number
+unsigned long long factorial(int n) {
+    if (n == 0 || n == 1)
+        return 1;
+    else
+        return n * factorial(n - 1);
+}
+
+int main() {
+    int num;
+
+    // Input number from user
+    cout << "Enter a number to find factorial for each number up to it: ";
+    cin >> num;
+
+    // Validate input
+    if (num < 0) {
+        cout << "Factorial is not defined for negative numbers." << endl;
+        return 1;
+    }
+
+    // Display factorial for each number from 1 to num
+    for (int i = 1; i <= num; ++i) {
+        cout << "Factorial of " << i << " = " << factorial(i) << endl;
+    }
+
+    return 0;
+}
