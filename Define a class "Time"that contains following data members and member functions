@@ -1,0 +1,78 @@
+#include <iostream>
+using namespace std;
+
+class Time {
+private:
+    int hours;
+    int minutes;
+    int seconds;
+
+public:
+    // Constructor with default values
+    Time(int h = 0, int m = 0, int s = 0) {
+        hours = h;
+        minutes = m;
+        seconds = s;
+    }
+
+    // Function to set time
+    void setTime(int h, int m, int s) {
+        hours = h;
+        minutes = m;
+        seconds = s;
+    }
+
+    // Function to display time in HH:MM:SS format
+    void displayTime() {
+        cout << hours << ":" << minutes << ":" << seconds << endl;
+    }
+
+    // Function to add two Time objects
+    Time addTime(const Time& t) {
+        Time sum;
+        sum.seconds = seconds + t.seconds;
+        sum.minutes = minutes + t.minutes + sum.seconds / 60;
+        sum.hours = hours + t.hours + sum.minutes / 60;
+        sum.minutes %= 60;
+        sum.seconds %= 60;
+        return sum;
+    }
+
+    // Function to convert time to seconds
+    int timeToSeconds() {
+        return hours * 3600 + minutes * 60 + seconds;
+    }
+
+    // Function to compare two Time objects
+    bool isEqual(const Time& t) {
+        return hours == t.hours && minutes == t.minutes && seconds == t.seconds;
+    }
+};
+
+int main() {
+    Time t1(10, 30, 45);
+    Time t2(5, 15, 20);
+
+    // Display initial times
+    cout << "Time t1: ";
+    t1.displayTime();
+    cout << "Time t2: ";
+    t2.displayTime();
+
+    // Add two times and display result
+    Time sum = t1.addTime(t2);
+    cout << "Sum of t1 and t2: ";
+    sum.displayTime();
+
+    // Compare two times
+    if (t1.isEqual(t2)) {
+        cout << "t1 and t2 are equal." << endl;
+    } else {
+        cout << "t1 and t2 are not equal." << endl;
+    }
+
+    // Convert time to seconds and display
+    cout << "Time t1 in seconds: " << t1.timeToSeconds() << " seconds" << endl;
+
+    return 0;
+}
