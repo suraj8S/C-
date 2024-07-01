@@ -1,0 +1,77 @@
+#include <iostream>
+#include <string>
+
+class Sales {
+private:
+    std::string product_name;
+    int sales_quantity;
+    double unit_price;
+
+public:
+    // Constructor with default values
+    Sales(const std::string& name = "", int quantity = 0, double price = 0.0) : product_name(name), sales_quantity(quantity), unit_price(price) {}
+
+    // Setter methods
+    void setProductName(const std::string& name) {
+        product_name = name;
+    }
+
+    void setSalesQuantity(int quantity) {
+        sales_quantity = quantity;
+    }
+
+    void setUnitPrice(double price) {
+        unit_price = price;
+    }
+
+    // Getter methods
+    std::string getProductName() const {
+        return product_name;
+    }
+
+    int getSalesQuantity() const {
+        return sales_quantity;
+    }
+
+    double getUnitPrice() const {
+        return unit_price;
+    }
+
+    // Function to calculate total sales amount
+    double calculateSalesAmount() const {
+        return sales_quantity * unit_price;
+    }
+
+    // Function to display sales details
+    void displaySalesDetails() const {
+        std::cout << "Product Name: " << product_name << std::endl;
+        std::cout << "Sales Quantity: " << sales_quantity << std::endl;
+        std::cout << "Unit Price: $" << unit_price << std::endl;
+        std::cout << "Total Sales Amount: $" << calculateSalesAmount() << std::endl;
+    }
+};
+
+int main() {
+    // Create an instance of the Sales class
+    Sales sale1;
+
+    // Set data using setter methods
+    sale1.setProductName("Laptop");
+    sale1.setSalesQuantity(10);
+    sale1.setUnitPrice(1200.50);
+
+    // Display sales details using getter methods
+    std::cout << "Sales Details:" << std::endl;
+    std::cout << "--------------" << std::endl;
+    std::cout << "Product Name: " << sale1.getProductName() << std::endl;
+    std::cout << "Sales Quantity: " << sale1.getSalesQuantity() << std::endl;
+    std::cout << "Unit Price: $" << sale1.getUnitPrice() << std::endl;
+    std::cout << "Total Sales Amount: $" << sale1.calculateSalesAmount() << std::endl;
+
+    // Using displaySalesDetails() member function
+    std::cout << "\nSales Details using displaySalesDetails() function:" << std::endl;
+    std::cout << "-----------------------------------------------" << std::endl;
+    sale1.displaySalesDetails();
+
+    return 0;
+}
