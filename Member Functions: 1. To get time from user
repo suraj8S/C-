@@ -1,0 +1,64 @@
+#include <iostream>
+
+class Time {
+private:
+    int hours;
+    int minutes;
+    int seconds;
+
+public:
+    // Constructor with default values
+    Time(int h = 0, int m = 0, int s = 0) : hours(h), minutes(m), seconds(s) {}
+
+    // Member function to get time from user
+    void getTimeFromUser() {
+        std::cout << "Enter time (hours minutes seconds): ";
+        std::cin >> hours >> minutes >> seconds;
+    }
+
+    // Member function to display time on the screen
+    void displayTime() const {
+        std::cout << "Time: " << hours << " hours, " << minutes << " minutes, " << seconds << " seconds" << std::endl;
+    }
+
+    // Member function to calculate sum of two time objects
+    Time addTime(const Time& t) const {
+        int total_seconds = seconds + t.seconds;
+        int carry_minutes = total_seconds / 60;
+        int remaining_seconds = total_seconds % 60;
+
+        int total_minutes = minutes + t.minutes + carry_minutes;
+        int carry_hours = total_minutes / 60;
+        int remaining_minutes = total_minutes % 60;
+
+        int total_hours = hours + t.hours + carry_hours;
+
+        return Time(total_hours, remaining_minutes, remaining_seconds);
+    }
+};
+
+int main() {
+    // Create two instances of the Time class
+    Time t1, t2, sum;
+
+    // Get time from user for t1 and t2
+    std::cout << "Enter time for first object:" << std::endl;
+    t1.getTimeFromUser();
+    std::cout << "Enter time for second object:" << std::endl;
+    t2.getTimeFromUser();
+
+    // Display the times entered by the user
+    std::cout << "\nTime entered for first object:" << std::endl;
+    t1.displayTime();
+    std::cout << "\nTime entered for second object:" << std::endl;
+    t2.displayTime();
+
+    // Calculate sum of t1 and t2
+    sum = t1.addTime(t2);
+
+    // Display the sum of times
+    std::cout << "\nSum of times:" << std::endl;
+    sum.displayTime();
+
+    return 0;
+}
