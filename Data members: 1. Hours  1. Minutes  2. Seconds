@@ -1,0 +1,61 @@
+#include <iostream>
+
+class Time {
+private:
+    int hours;
+    int minutes;
+    int seconds;
+
+public:
+    // Constructor with default values
+    Time(int h = 0, int m = 0, int s = 0) : hours(h), minutes(m), seconds(s) {}
+
+    // Getter methods
+    int getHours() const {
+        return hours;
+    }
+
+    int getMinutes() const {
+        return minutes;
+    }
+
+    int getSeconds() const {
+        return seconds;
+    }
+
+    // Setter methods
+    void setHours(int h) {
+        hours = h;
+    }
+
+    void setMinutes(int m) {
+        minutes = m;
+    }
+
+    void setSeconds(int s) {
+        seconds = s;
+    }
+
+    // Display method
+    void display() const {
+        std::cout << "Time: " << hours << " hours, " << minutes << " minutes, " << seconds << " seconds" << std::endl;
+    }
+};
+
+int main() {
+    // Create an instance of the Time class
+    Time t1(10, 30, 45);
+
+    // Display the initial time
+    t1.display();
+
+    // Update hours, minutes, and seconds
+    t1.setHours(12);
+    t1.setMinutes(15);
+    t1.setSeconds(20);
+
+    // Display the updated time
+    t1.display();
+
+    return 0;
+}
