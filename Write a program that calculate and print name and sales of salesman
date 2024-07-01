@@ -1,0 +1,28 @@
+#include <iostream>
+#include <string>
+
+class Salesman {
+private:
+    std::string name;
+    double sales;
+
+public:
+    // Constructor with parameters
+    Salesman(const std::string& n, double s) : name(n), sales(s) {}
+
+    // Function to display salesman details
+    void displaySalesmanDetails() const {
+        std::cout << "Salesman Name: " << name << std::endl;
+        std::cout << "Sales Amount: $" << sales << std::endl;
+    }
+};
+
+int main() {
+    // Initialize Salesman object with name and sales
+    Salesman salesman("John Doe", 50000.75);
+
+    // Display salesman details
+    salesman.displaySalesmanDetails();
+
+    return 0;
+}
