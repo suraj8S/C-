@@ -1,0 +1,60 @@
+#include <iostream>
+#include <string>
+
+class Salesman {
+private:
+    std::string name;
+    double sales;
+
+public:
+    // Constructor with default values
+    Salesman(const std::string& n = "", double s = 0.0) : name(n), sales(s) {}
+
+    // Setter method for name
+    void setName(const std::string& n) {
+        name = n;
+    }
+
+    // Setter method for sales
+    void setSales(double s) {
+        sales = s;
+    }
+
+    // Getter method for name
+    std::string getName() const {
+        return name;
+    }
+
+    // Getter method for sales
+    double getSales() const {
+        return sales;
+    }
+
+    // Display method to show salesman details
+    void displaySalesman() const {
+        std::cout << "Salesman Name: " << name << std::endl;
+        std::cout << "Sales Amount: $" << sales << std::endl;
+    }
+};
+
+int main() {
+    // Create an instance of the Salesman class
+    Salesman s1;
+
+    // Set data using setter methods
+    s1.setName("John Doe");
+    s1.setSales(25000.0);
+
+    // Display salesman details using getter methods
+    std::cout << "Salesman Details:" << std::endl;
+    std::cout << "----------------" << std::endl;
+    std::cout << "Name: " << s1.getName() << std::endl;
+    std::cout << "Sales: $" << s1.getSales() << std::endl;
+
+    // Using displaySalesman() member function
+    std::cout << "\nSalesman Details using displaySalesman() function:" << std::endl;
+    std::cout << "--------------------------------------------------" << std::endl;
+    s1.displaySalesman();
+
+    return 0;
+}
